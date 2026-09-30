@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sosyal Susuz Park Projesi · Şanlıurfa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#ECF5E6;--card:#F8FCF4;--ink:#16301F;--mute:#547060;--line:#CBDDC4;--leaf:#2F8A3E;--sun:#D9601E;--teal:#1E8A63;--water:#1F7FA8;--forest:#14532D;--lav:#8C6BB1;--gold:#F2B632;--grass:#CDE7BE;--path:#EFE3C6;--fence:#9CBF8C}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#0E1912;--card:#15251B;--ink:#E6F0E2;--mute:#9DB6A5;--line:#29402F;--leaf:#7CCB6A;--sun:#E9793A;--teal:#34B088;--water:#4AA8D0;--forest:#0A2214;--lav:#B79AD8;--gold:#F2B632;--grass:#1F3D29;--path:#5E5A42;--fence:#33613F}}
+:root[data-theme=dark]{--bg:#0E1912;--card:#15251B;--ink:#E6F0E2;--mute:#9DB6A5;--line:#29402F;--leaf:#7CCB6A;--sun:#E9793A;--teal:#34B088;--water:#4AA8D0;--forest:#0A2214;--lav:#B79AD8;--gold:#F2B632;--grass:#1F3D29;--path:#5E5A42;--fence:#33613F}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:radial-gradient(1200px 500px at 85% -5%,color-mix(in srgb,var(--gold) 22%,transparent),transparent 70%),var(--bg);color:var(--ink);font:400 17px/1.6 Figtree,system-ui,sans-serif}
+h1,h2,h3,.num{font-family:"Bricolage Grotesque",Figtree,system-ui,sans-serif;letter-spacing:-.02em;line-height:1.05;margin:0}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--teal);outline-offset:3px}
+.ic{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.nic{fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.brand{display:flex;align-items:center;gap:10px;padding-top:22px;padding-bottom:0;font-size:18px;font-family:"Bricolage Grotesque",sans-serif}
+.brand .ic{font-size:28px}
+.top{display:grid;grid-template-columns:1.05fr .95fr;gap:24px;align-items:center}
+.scene{border-radius:26px;overflow:hidden;border:1px solid var(--line);background:linear-gradient(#CFE9F3,#F6F2D3)}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]) .scene{background:linear-gradient(#1B3A4A,#2C3B2A)}}
+:root[data-theme=dark] .scene{background:linear-gradient(#1B3A4A,#2C3B2A)}
+.cico{font-size:40px;color:var(--leaf);margin-bottom:6px;display:block}
+.c:nth-child(2) .cico{color:var(--water)}
+.c:nth-child(3) .cico{color:var(--teal)}
+.side .sic{font-size:26px;vertical-align:-5px;margin-right:6px}
+@media (max-width:680px){.top{grid-template-columns:1fr}}
+.navlink{margin-left:auto;font:600 15px Figtree,sans-serif;text-decoration:none;background:var(--forest);color:#fff;padding:9px 16px;border-radius:999px}
+.plist{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:14px;margin:0 8px 34px}
+.pc{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px 18px}
+.pc h3{font-size:20px;font-weight:700;color:var(--forest)}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]) .pc h3{color:var(--leaf)}}
+:root[data-theme=dark] .pc h3{color:var(--leaf)}
+.pc p{margin:6px 0 10px;font-size:15px;color:var(--mute);line-height:1.45}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font-size:13px;font-weight:600;padding:3px 10px;border-radius:999px;background:color-mix(in srgb,var(--leaf) 16%,transparent);color:var(--ink)}
+.lg{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:8px;margin:14px 8px 0}
+.lg button{display:flex;gap:10px;align-items:center;text-align:left;font:500 15px/1.3 Figtree,sans-serif;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:14px;padding:9px 12px;cursor:pointer}
+.lg button[aria-pressed=true]{border-color:var(--leaf);box-shadow:0 0 0 2px var(--leaf)}
+.lg i{font-style:normal;flex:none;width:26px;height:26px;border-radius:50%;background:var(--forest);color:#fff;display:grid;place-items:center;font:700 13px Figtree,sans-serif}
+[data-cat]{transition:opacity .2s}
+.dim{opacity:.16}
+.btn{display:inline-block;margin:18px 8px 0;background:var(--forest);color:#fff;text-decoration:none;font-weight:600;padding:12px 22px;border-radius:999px}
+.mapnote{margin:10px 8px 0}
+/* hero */
+.hero{padding:56px 0 40px}
+.hero h1{font-size:clamp(34px,6vw,64px);font-weight:800;max-width:14ch}
+.hero p{max-width:52ch;color:var(--mute);margin:18px 0 0}
+.split{display:grid;grid-template-columns:1fr 1fr;margin-top:36px;border-radius:22px;overflow:hidden;border:1px solid var(--line)}
+.side{padding:26px 26px 28px;position:relative}
+.side.city{background:var(--sun);color:#fff}
+.side.rural{background:var(--teal);color:#fff}
+.side .lbl{font-weight:600;font-size:15px;opacity:.9}
+.side .t{font-size:clamp(54px,11vw,104px);font-weight:800;line-height:.95;margin:8px 0 6px}
+.side .meta{font-size:15px;opacity:.92}
+.diff{background:var(--forest);color:#fff;padding:18px 26px;grid-column:1/-1;display:flex;flex-wrap:wrap;gap:8px 28px;align-items:baseline}
+.diff .num{font-size:34px;font-weight:800}
+.diff span{opacity:.85;font-size:15px}
+.note{font-size:13.5px;color:var(--mute);margin-top:10px}
+/* sections */
+section{padding:44px 0}
+h2{font-size:clamp(26px,4vw,38px);font-weight:700;margin-bottom:8px}
+.lead{color:var(--mute);max-width:60ch;margin:0 0 26px}
+.counters{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:2px solid var(--ink);border-bottom:1px solid var(--line)}
+.c{padding:24px 22px 26px}
+.c+.c{border-left:1px solid var(--line)}
+.c .num{font-size:clamp(40px,7vw,68px);font-weight:800;color:var(--leaf);font-variant-numeric:tabular-nums}
+.c .u{font-size:20px;font-weight:700;color:var(--ink)}
+@keyframes pop{from{transform:translateY(-4px);opacity:.6}to{transform:none;opacity:1}}
+.num.pop{animation:pop .35s ease-out}
+@media (prefers-reduced-motion:reduce){.num.pop{animation:none}}
+.c p{margin:6px 0 0;color:var(--mute);font-size:15px}
+/* diagram */
+.panel{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:14px}
+.wide{max-width:1280px;margin:0 auto;padding:0 12px}
+svg{width:100%;height:auto;display:block}
+.bars{display:grid;gap:14px;margin-top:26px}
+.bar{display:grid;grid-template-columns:150px 1fr auto;gap:12px;align-items:center;font-size:15px}
+.track{height:26px;background:var(--line);border-radius:13px;overflow:hidden}
+.fill{height:100%;border-radius:13px}
+footer{padding:36px 0 60px;color:var(--mute);font-size:14px;border-top:1px solid var(--line)}
+@media (max-width:680px){
+ .split{grid-template-columns:1fr}
+ .counters{grid-template-columns:1fr}
+ .c+.c{border-left:0;border-top:1px solid var(--line)}
+ .bar{grid-template-columns:1fr auto}.bar .track{grid-column:1/-1;order:3}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="i-drop" viewBox="0 0 24 24"><path d="M12 3C12 3 5 11 5 15a7 7 0 0014 0c0-4-7-12-7-12z"/></symbol>
+<symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1"/></symbol>
+<symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"/></symbol>
+<symbol id="i-coin" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9 9.5h4.5a1.5 1.5 0 010 3H10.5a1.5 1.5 0 000 3H15M12 7v2M12 15.5v2"/></symbol>
+<symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 21s-8-5.200-8-11a4.500 4.500 0 018-2.800A4.500 4.500 0 0120 10c0 5.800-8 11-8 11z"/></symbol>
+<symbol id="i-recycle" viewBox="0 0 24 24"><path d="M20 12a8 8 0 01-14.500 4.600M4 12a8 8 0 0114.500-4.600M18.500 3v4.500H14M5.500 21v-4.500H10"/></symbol>
+<symbol id="i-tree" viewBox="0 0 24 24"><path d="M12 22v-7M12 18l-3-2M12 17l3-2M12 15c-4 0-6-2.500-6-5.500 0-2 1.200-3.500 3-4 .5-2 1.800-3 3-3s2.500 1 3 3c1.800.5 3 2 3 4 0 3-2 5.500-6 5.500z"/></symbol>
+<symbol id="i-people" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.300 2.700-6 6-6s6 2.700 6 6"/><circle cx="17" cy="9" r="2.500"/><path d="M17 14c2.500 0 4.500 2 4.500 5"/></symbol>
+<symbol id="i-leaf" viewBox="0 0 24 24"><path d="M5 19C5 10 10 5 20 4c0 10-5 15-14 15zM5 19l8-8"/></symbol>
+</defs></svg>
+<div class="brand wrap"><svg class="ic" style="color:var(--leaf)"><use href="#i-leaf"/></svg><b>Sosyal Susuz Park Projesi</b><a class="navlink" href="kafe-menu.html">Kafe menüsü ve kuponlar</a></div>
+
+<header class="hero"><div class="wrap">
+  <div class="top"><div><h1>Susuz parklarla daha serin bir Şanlıurfa</h1>
+  <p>Kuraklığa dayanıklı bitkilerle kurulan parklar suyu korur, şehir içi sıcaklığı düşürür ve geri dönüşümü herkes için kazanca çevirir. Aşağıdaki veriler şehrin şu anki durumunu ve projenin katkısını gösterir.</p></div><svg class="scene" viewBox="0 0 480 380" role="img" aria-label="Güneşli bir susuz park: zeytin ağaçları, lavantalar, su damlası ve geri dönüşüm simgesi">
+<circle cx="372" cy="92" r="64" fill="#F2B632" opacity=".25"/><circle cx="372" cy="92" r="42" fill="#F2B632"/>
+<path d="M0 230 Q90 170 190 215 T380 200 T480 215 V380 H0z" fill="#8FC97A" opacity=".75"/>
+<path d="M0 270 Q120 215 250 262 T480 250 V380 H0z" fill="#3E9A52"/>
+<path d="M0 320 Q140 285 290 315 T480 305 V380 H0z" fill="#14532D"/>
+<g><rect x="96" y="196" width="10" height="70" rx="4" fill="#6B4A2B"/><circle cx="101" cy="186" r="38" fill="#2F7D3C"/><circle cx="80" cy="200" r="24" fill="#4CA655"/><circle cx="124" cy="202" r="22" fill="#5DB865"/></g>
+<g><rect x="258" y="215" width="8" height="52" rx="4" fill="#6B4A2B"/><circle cx="262" cy="207" r="28" fill="#2F7D3C"/><circle cx="247" cy="217" r="17" fill="#4CA655"/><circle cx="279" cy="219" r="16" fill="#5DB865"/></g>
+<g stroke="#8C6BB1" stroke-width="3" stroke-linecap="round"><path d="M160 318v-34M170 320v-40M180 318v-32M190 320v-38M200 318v-30"/><path d="M340 322v-30M350 324v-36M360 322v-28M370 324v-34M380 322v-26"/></g>
+<g fill="#B79AD8"><circle cx="160" cy="282" r="5"/><circle cx="170" cy="278" r="5"/><circle cx="180" cy="284" r="5"/><circle cx="190" cy="280" r="5"/><circle cx="200" cy="286" r="5"/><circle cx="340" cy="290" r="5"/><circle cx="350" cy="286" r="5"/><circle cx="360" cy="292" r="5"/><circle cx="370" cy="284" r="5"/><circle cx="380" cy="290" r="5"/></g>
+<g transform="translate(40 56)"><path d="M28 0C28 0 4 28 4 46a24 24 0 0048 0C52 28 28 0 28 0z" fill="#2E9BC8"/><path d="M18 46a10 10 0 0010 10" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round" opacity=".8"/></g>
+<g transform="translate(395 236) scale(2.6)" style="color:#fff" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="11" fill="#1E8A63" stroke="none"/><path d="M19 12a7 7 0 01-12.700 4M5 12a7 7 0 0112.700-4M17 4.500V8h-3.500M7 19.500V16h3.500"/></g>
+<g fill="#5DB865"><path d="M150 100c12-22 38-26 52-22-6 22-28 34-52 22z"/><path d="M210 140c8-16 28-19 38-16-4 16-20 25-38 16z" fill="#8FC97A"/></g>
+</svg></div>
+
+  <div class="split" aria-live="polite">
+    <div class="side city">
+      <div class="lbl"><svg class="ic sic"><use href="#i-sun"/></svg>Şehir merkezi</div>
+      <div class="t num" id="tCity">--°</div>
+      <div class="meta" id="mCity">Yükleniyor…</div>
+    </div>
+    <div class="side rural">
+      <div class="lbl"><svg class="ic sic"><use href="#i-leaf"/></svg>Kırsal</div>
+      <div class="t num" id="tRural">--°</div>
+      <div class="meta" id="mRural">Yükleniyor…</div>
+    </div>
+    <div class="diff">
+      <div><span>Merkez ile kırsal arasındaki fark</span><br><b class="num" id="tDiff">--°C</b></div>
+      <span id="diffText">Fark hesaplanıyor…</span>
+    </div>
+  </div>
+  <div class="note" id="wxNote"></div>
+</div></header>
+
+<main>
+<section><div class="wrap">
+  <h2>Şu ana kadar</h2>
+  <p class="lead">Projeyle kurulan parklar, onları ziyaret edenler ve DOA makinelerine kazandırılan geri dönüşüm atıkları.</p>
+  <div class="counters">
+    <div class="c"><svg class="ic cico"><use href="#i-tree"/></svg><div class="num" data-to="12" id="cPark">0</div><div class="u">park kuruldu</div><p>Susuz yaşayabilen bitkilerle yapılan parklar</p></div>
+    <div class="c"><svg class="ic cico"><use href="#i-people"/></svg><div class="num" data-to="48730" id="cVisit">0</div><div class="u">ziyaretçi</div><p>Parklarımıza gelen kişi sayısı</p></div>
+    <div class="c"><svg class="ic cico"><use href="#i-recycle"/></svg><div class="num" data-to="6420" id="cWaste">0</div><div class="u">kg atık kazanıldı</div><p>DOA makinelerine bırakılan geri dönüşüm atığı</p></div>
+  </div>
+  <div class="note">Gösterilen sayılar örnek değerlerdir ve canlı artış görünümü içindir. Gerçek verilerle güncellemek için kodun altındaki <code>VERI</code> bölümünü düzenleyin.</div>
+</div></section>
+
+<section><div class="wide">
+  <h2 style="padding:0 8px">Projenin katkıları</h2>
+  <p class="lead" style="padding:0 8px">Tek bir park; su, enerji, sağlık ve geri dönüşüm alanlarında birlikte fayda üretir.</p>
+  <div class="panel">
+  <svg viewBox="0 0 1000 640" role="img" aria-label="Susuz park merkezde, çevresinde altı katkı: su, serinlik, enerji, maliyet, sağlık ve sıfır atık">
+    <g stroke="var(--line)" stroke-width="4" stroke-dasharray="2 10" stroke-linecap="round" fill="none">
+      <path d="M500 320 L180 100"/><path d="M500 320 L500 70"/><path d="M500 320 L820 100"/>
+      <path d="M500 320 L180 540"/><path d="M500 320 L500 570"/><path d="M500 320 L820 540"/>
+    </g>
+    <circle cx="500" cy="320" r="122" fill="var(--leaf)" opacity=".18"/>
+    <circle cx="500" cy="320" r="104" fill="var(--forest)"/>
+    <svg x="468" y="246" width="64" height="64" class="nic" style="color:#9AE08A"><use href="#i-tree"/></svg>
+    <text x="500" y="346" text-anchor="middle" font-family="Bricolage Grotesque,sans-serif" font-weight="800" font-size="30" fill="#fff">Susuz</text>
+    <text x="500" y="378" text-anchor="middle" font-family="Bricolage Grotesque,sans-serif" font-weight="800" font-size="30" fill="#fff">Park</text>
+    <g font-family="Figtree,sans-serif">
+      <g><rect x="30" y="40" width="300" height="120" rx="22" fill="#1F7FA8"/><circle cx="84" cy="100" r="32" fill="#fff" opacity=".2"/><svg x="64" y="80" width="40" height="40" class="nic" style="color:#fff"><use href="#i-drop"/></svg><text x="134" y="94" text-anchor="start" font-size="25" font-weight="700" fill="#fff">Su tasarrufu</text><text x="134" y="124" text-anchor="start" font-size="16" fill="#fff" opacity=".95">Sulama israfı biter</text></g>
+      <g><rect x="350" y="10" width="300" height="120" rx="22" fill="#D9601E"/><circle cx="404" cy="70" r="32" fill="#fff" opacity=".2"/><svg x="384" y="50" width="40" height="40" class="nic" style="color:#fff"><use href="#i-sun"/></svg><text x="454" y="64" text-anchor="start" font-size="25" font-weight="700" fill="#fff">Şehir içi serinlik</text><text x="454" y="94" text-anchor="start" font-size="16" fill="#fff" opacity=".95">Fark 2–3,5°C düşer</text></g>
+      <g><rect x="670" y="40" width="300" height="120" rx="22" fill="#A8740A"/><circle cx="724" cy="100" r="32" fill="#fff" opacity=".2"/><svg x="704" y="80" width="40" height="40" class="nic" style="color:#fff"><use href="#i-bolt"/></svg><text x="774" y="94" text-anchor="start" font-size="25" font-weight="700" fill="#fff">Enerji tasarrufu</text><text x="774" y="124" text-anchor="start" font-size="16" fill="#fff" opacity=".95">Daha az klima, düşük fatura</text></g>
+      <g><rect x="30" y="480" width="300" height="120" rx="22" fill="#6B4A2B"/><circle cx="84" cy="540" r="32" fill="#fff" opacity=".2"/><svg x="64" y="520" width="40" height="40" class="nic" style="color:#fff"><use href="#i-coin"/></svg><text x="134" y="534" text-anchor="start" font-size="25" font-weight="700" fill="#fff">Maliyet tasarrufu</text><text x="134" y="564" text-anchor="start" font-size="16" fill="#fff" opacity=".95">Bakım ve sulama gideri azalır</text></g>
+      <g><rect x="350" y="510" width="300" height="120" rx="22" fill="#B5456B"/><circle cx="404" cy="570" r="32" fill="#fff" opacity=".2"/><svg x="384" y="550" width="40" height="40" class="nic" style="color:#fff"><use href="#i-heart"/></svg><text x="454" y="564" text-anchor="start" font-size="25" font-weight="700" fill="#fff">Sağlıklı yaşam</text><text x="454" y="594" text-anchor="start" font-size="16" fill="#fff" opacity=".95">Sıcak çarpması riski azalır</text></g>
+      <g><rect x="670" y="480" width="300" height="120" rx="22" fill="#1E8A63"/><circle cx="724" cy="540" r="32" fill="#fff" opacity=".2"/><svg x="704" y="520" width="40" height="40" class="nic" style="color:#fff"><use href="#i-recycle"/></svg><text x="774" y="534" text-anchor="start" font-size="25" font-weight="700" fill="#fff">Sıfır atık (DOA)</text><text x="774" y="564" text-anchor="start" font-size="16" fill="#fff" opacity=".95">Atıktan park ve oyuncak</text></g>
+    </g>
+  </svg>
+  </div>
+</div></section>
+<section><div class="wide"><h2 style="padding:0 8px">Parklarımız ve park planı</h2><p class="lead" style="padding:0 8px">Aşağıdaki adresler örnektir. Haritada DOA makineleri, kafe, oyun alanı, banklar ve diğer alanların yeri görünür. Bir maddeye dokunarak haritada öne çıkarabilirsiniz.</p><div class="plist"><div class="pc"><h3>Bahçelievler Susuz Parkı</h3><p>Haliliye · Bahçelievler Mah.<br>Zeytin Sk. No:12, Şanlıurfa</p><div class="chips"><span class="chip">Kafe var</span><span class="chip">3 DOA</span><span class="chip">Çocuk oyun alanı</span></div></div><div class="pc"><h3>Yenice Susuz Parkı</h3><p>Eyyübiye · Yenice Mah.<br>Lavanta Cd. No:5, Şanlıurfa</p><div class="chips"><span class="chip">Kafe var</span><span class="chip">2 DOA</span><span class="chip">Çocuk oyun alanı</span></div></div><div class="pc"><h3>Batıkent Susuz Parkı</h3><p>Karaköprü · Batıkent Mah.<br>Ahlat Sk. No:21, Şanlıurfa</p><div class="chips"><span class="chip">Kafe var</span><span class="chip">3 DOA</span><span class="chip">Çocuk oyun alanı</span></div></div><div class="pc"><h3>Seyrantepe Susuz Parkı</h3><p>Haliliye · Seyrantepe Mah.<br>Biberiye Sk. No:8, Şanlıurfa</p><div class="chips"><span class="chip">Kafe var</span><span class="chip">2 DOA</span><span class="chip">Çocuk oyun alanı</span></div></div><div class="pc"><h3>Karşıyaka Susuz Parkı</h3><p>Eyyübiye · Karşıyaka Mah.<br>Meşe Cd. No:30, Şanlıurfa</p><div class="chips"><span class="chip">Büfe var</span><span class="chip">2 DOA</span><span class="chip">Çocuk oyun alanı</span></div></div><div class="pc"><h3>Hacıbayram Susuz Parkı</h3><p>Haliliye · Hacıbayram Mah.<br>Kekik Sk. No:3, Şanlıurfa</p><div class="chips"><span class="chip">Kafe var</span><span class="chip">3 DOA</span><span class="chip">Çocuk oyun alanı</span></div></div></div><h3 style="padding:0 8px 12px;font-size:24px;font-weight:700">Örnek kuş bakışı plan: Bahçelievler Susuz Parkı</h3><div class="panel"><svg id="parkmap" viewBox="0 0 1000 620" role="img" aria-label="Bahçelievler Susuz Parkı kuş bakışı planı: kafe, DOA makineleri, oyun alanı, banklar, kamelya ve spor sahası"><rect x="20" y="20" width="960" height="580" rx="28" fill="var(--grass)" stroke="var(--fence)" stroke-width="6"/><rect x="470" y="594" width="60" height="12" fill="var(--path)"/><rect x="14" y="310" width="12" height="60" fill="var(--path)"/><path d="M500 600 L500 530" stroke="var(--path)" stroke-width="28"/><path d="M20 340 L170 340" stroke="var(--path)" stroke-width="28"/><ellipse cx="500" cy="340" rx="330" ry="190" fill="none" stroke="var(--path)" stroke-width="28"/><path d="M350 177 L420 250" stroke="var(--path)" stroke-width="18" opacity=".0"/><g data-cat="plant"><rect x="90" y="440" width="180" height="120" rx="10" fill="#6B4A2B" opacity=".55"/><line x1="102" y1="450" x2="258" y2="450" stroke="#8C6BB1" stroke-width="11" stroke-linecap="round" stroke-dasharray="3 8"/><line x1="102" y1="475" x2="258" y2="475" stroke="#8C6BB1" stroke-width="11" stroke-linecap="round" stroke-dasharray="3 8"/><line x1="102" y1="500" x2="258" y2="500" stroke="#8C6BB1" stroke-width="11" stroke-linecap="round" stroke-dasharray="3 8"/><line x1="102" y1="525" x2="258" y2="525" stroke="#8C6BB1" stroke-width="11" stroke-linecap="round" stroke-dasharray="3 8"/><line x1="102" y1="550" x2="258" y2="550" stroke="#8C6BB1" stroke-width="11" stroke-linecap="round" stroke-dasharray="3 8"/><rect x="390" y="62" width="80" height="50" rx="10" fill="#6B4A2B" opacity=".55"/><line x1="402" y1="72" x2="458" y2="72" stroke="#8C6BB1" stroke-width="11" stroke-linecap="round" stroke-dasharray="3 8"/><line x1="402" y1="87" x2="458" y2="87" stroke="#8C6BB1" stroke-width="11" stroke-linecap="round" stroke-dasharray="3 8"/><line x1="402" y1="102" x2="458" y2="102" stroke="#8C6BB1" stroke-width="11" stroke-linecap="round" stroke-dasharray="3 8"/><circle cx="893" cy="150" r="13" fill="#000" opacity=".15"/><circle cx="890" cy="146" r="13" fill="#2F7D3C"/><circle cx="886" cy="142" r="7" fill="#6CC274" opacity=".85"/><circle cx="497" cy="482" r="11" fill="#000" opacity=".15"/><circle cx="494" cy="478" r="11" fill="#2F7D3C"/><circle cx="491" cy="475" r="6" fill="#6CC274" opacity=".85"/><circle cx="932" cy="190" r="13" fill="#000" opacity=".15"/><circle cx="929" cy="186" r="13" fill="#2F7D3C"/><circle cx="925" cy="182" r="7" fill="#6CC274" opacity=".85"/><circle cx="888" cy="239" r="11" fill="#000" opacity=".15"/><circle cx="885" cy="235" r="11" fill="#2F7D3C"/><circle cx="882" cy="232" r="6" fill="#6CC274" opacity=".85"/><circle cx="648" cy="246" r="13" fill="#000" opacity=".15"/><circle cx="645" cy="242" r="13" fill="#2F7D3C"/><circle cx="641" cy="238" r="7" fill="#6CC274" opacity=".85"/><circle cx="114" cy="264" r="14" fill="#000" opacity=".15"/><circle cx="111" cy="260" r="14" fill="#2F7D3C"/><circle cx="107" cy="256" r="8" fill="#6CC274" opacity=".85"/><circle cx="517" cy="424" r="13" fill="#000" opacity=".15"/><circle cx="514" cy="420" r="13" fill="#2F7D3C"/><circle cx="510" cy="416" r="7" fill="#6CC274" opacity=".85"/><circle cx="641" cy="361" r="15" fill="#000" opacity=".15"/><circle cx="638" cy="357" r="15" fill="#2F7D3C"/><circle cx="634" cy="352" r="8" fill="#6CC274" opacity=".85"/><circle cx="481" cy="222" r="17" fill="#000" opacity=".15"/><circle cx="478" cy="218" r="17" fill="#2F7D3C"/><circle cx="473" cy="213" r="9" fill="#6CC274" opacity=".85"/><circle cx="416" cy="226" r="15" fill="#000" opacity=".15"/><circle cx="413" cy="222" r="15" fill="#2F7D3C"/><circle cx="408" cy="218" r="8" fill="#6CC274" opacity=".85"/><circle cx="276" cy="348" r="12" fill="#000" opacity=".15"/><circle cx="273" cy="344" r="12" fill="#2F7D3C"/><circle cx="269" cy="340" r="7" fill="#6CC274" opacity=".85"/><circle cx="290" cy="292" r="11" fill="#000" opacity=".15"/><circle cx="287" cy="288" r="11" fill="#2F7D3C"/><circle cx="284" cy="285" r="6" fill="#6CC274" opacity=".85"/><circle cx="549" cy="240" r="13" fill="#000" opacity=".15"/><circle cx="546" cy="236" r="13" fill="#2F7D3C"/><circle cx="542" cy="232" r="7" fill="#6CC274" opacity=".85"/><circle cx="461" cy="457" r="11" fill="#000" opacity=".15"/><circle cx="458" cy="453" r="11" fill="#2F7D3C"/><circle cx="455" cy="450" r="6" fill="#6CC274" opacity=".85"/><circle cx="546" cy="464" r="11" fill="#000" opacity=".15"/><circle cx="543" cy="460" r="11" fill="#2F7D3C"/><circle cx="540" cy="457" r="6" fill="#6CC274" opacity=".85"/><circle cx="53" cy="208" r="15" fill="#000" opacity=".15"/><circle cx="50" cy="204" r="15" fill="#2F7D3C"/><circle cx="46" cy="200" r="8" fill="#6CC274" opacity=".85"/><circle cx="79" cy="126" r="17" fill="#000" opacity=".15"/><circle cx="76" cy="122" r="17" fill="#2F7D3C"/><circle cx="71" cy="117" r="9" fill="#6CC274" opacity=".85"/><circle cx="702" cy="312" r="13" fill="#000" opacity=".15"/><circle cx="699" cy="308" r="13" fill="#2F7D3C"/><circle cx="695" cy="304" r="7" fill="#6CC274" opacity=".85"/><circle cx="669" cy="426" r="14" fill="#000" opacity=".15"/><circle cx="666" cy="422" r="14" fill="#2F7D3C"/><circle cx="662" cy="418" r="8" fill="#6CC274" opacity=".85"/><circle cx="403" cy="325" r="14" fill="#000" opacity=".15"/><circle cx="400" cy="321" r="14" fill="#2F7D3C"/><circle cx="396" cy="317" r="8" fill="#6CC274" opacity=".85"/><circle cx="609" cy="81" r="17" fill="#000" opacity=".15"/><circle cx="606" cy="77" r="17" fill="#2F7D3C"/><circle cx="601" cy="72" r="9" fill="#6CC274" opacity=".85"/><circle cx="937" cy="147" r="16" fill="#000" opacity=".15"/><circle cx="934" cy="143" r="16" fill="#2F7D3C"/><circle cx="929" cy="138" r="9" fill="#6CC274" opacity=".85"/><circle cx="918" cy="321" r="15" fill="#000" opacity=".15"/><circle cx="915" cy="317" r="15" fill="#2F7D3C"/><circle cx="910" cy="312" r="8" fill="#6CC274" opacity=".85"/><circle cx="721" cy="406" r="17" fill="#000" opacity=".15"/><circle cx="718" cy="402" r="17" fill="#2F7D3C"/><circle cx="713" cy="397" r="9" fill="#6CC274" opacity=".85"/><circle cx="820" cy="196" r="14" fill="#000" opacity=".15"/><circle cx="817" cy="192" r="14" fill="#2F7D3C"/><circle cx="813" cy="188" r="8" fill="#6CC274" opacity=".85"/><circle cx="945" cy="253" r="17" fill="#000" opacity=".15"/><circle cx="942" cy="249" r="17" fill="#2F7D3C"/><circle cx="937" cy="244" r="9" fill="#6CC274" opacity=".85"/><circle cx="680" cy="571" r="15" fill="#000" opacity=".15"/><circle cx="677" cy="567" r="15" fill="#2F7D3C"/><circle cx="672" cy="562" r="8" fill="#6CC274" opacity=".85"/><circle cx="324" cy="332" r="11" fill="#000" opacity=".15"/><circle cx="321" cy="328" r="11" fill="#2F7D3C"/><circle cx="318" cy="325" r="6" fill="#6CC274" opacity=".85"/><circle cx="64" cy="401" r="15" fill="#000" opacity=".15"/><circle cx="61" cy="397" r="15" fill="#2F7D3C"/><circle cx="56" cy="392" r="8" fill="#6CC274" opacity=".85"/><circle cx="696" cy="366" r="15" fill="#000" opacity=".15"/><circle cx="693" cy="362" r="15" fill="#2F7D3C"/><circle cx="688" cy="358" r="8" fill="#6CC274" opacity=".85"/><g><circle cx="180" cy="440" r="14" fill="#14532D" stroke="#fff" stroke-width="2.5"/><text x="180" y="445" text-anchor="middle" font-size="15" font-weight="700" fill="#fff" font-family="Figtree,sans-serif">8</text></g></g><g data-cat="bench"><g transform="translate(800 340) rotate(90)"><rect x="-14" y="-5" width="28" height="10" rx="3" fill="#8A5A32"/><rect x="-14" y="-5" width="28" height="3" rx="1.5" fill="#B98552"/></g><g transform="translate(834 421) rotate(125)"><rect x="-14" y="-5" width="28" height="10" rx="3" fill="#8A5A32"/><rect x="-14" y="-5" width="28" height="3" rx="1.5" fill="#B98552"/></g><g transform="translate(716 454) rotate(149)"><rect x="-14" y="-5" width="28" height="10" rx="3" fill="#8A5A32"/><rect x="-14" y="-5" width="28" height="3" rx="1.5" fill="#B98552"/></g><g transform="translate(646 537) rotate(166)"><rect x="-14" y="-5" width="28" height="10" rx="3" fill="#8A5A32"/><rect x="-14" y="-5" width="28" height="3" rx="1.5" fill="#B98552"/></g><g transform="translate(510 504) rotate(179)"><rect x="-14" y="-5" width="28" height="10" rx="3" fill="#8A5A32"/><rect x="-14" y="-5" width="28" height="3" rx="1.5" fill="#B98552"/></g><g transform="translate(377 543) rotate(-168)"><rect x="-14" y="-5" width="28" height="10" rx="3" fill="#8A5A32"/><rect x="-14" y="-5" width="28" height="3" rx="1.5" fill="#B98552"/></g><g transform="translate(299 462) rotate(-153)"><rect x="-14" y="-5" width="28" height="10" rx="3" fill="#8A5A32"/><rect x="-14" y="-5" width="28" height="3" rx="1.5" fill="#B98552"/></g><g transform="translate(201 351) rotate(-97)"><rect x="-14" y="-5" width="28" height="10" rx="3" fill="#8A5A32"/><rect x="-14" y="-5" width="28" height="3" rx="1.5" fill="#B98552"/></g><g transform="translate(158 273) rotate(-61)"><rect x="-14" y="-5" width="28" height="10" rx="3" fill="#8A5A32"/><rect x="-14" y="-5" width="28" height="3" rx="1.5" fill="#B98552"/></g><g transform="translate(469 177) rotate(-3)"><rect x="-14" y="-5" width="28" height="10" rx="3" fill="#8A5A32"/><rect x="-14" y="-5" width="28" height="3" rx="1.5" fill="#B98552"/></g><g transform="translate(599 132) rotate(9)"><rect x="-14" y="-5" width="28" height="10" rx="3" fill="#8A5A32"/><rect x="-14" y="-5" width="28" height="3" rx="1.5" fill="#B98552"/></g><g transform="translate(812 232) rotate(45)"><rect x="-14" y="-5" width="28" height="10" rx="3" fill="#8A5A32"/><rect x="-14" y="-5" width="28" height="3" rx="1.5" fill="#B98552"/></g><g transform="translate(797 317) rotate(76)"><rect x="-14" y="-5" width="28" height="10" rx="3" fill="#8A5A32"/><rect x="-14" y="-5" width="28" height="3" rx="1.5" fill="#B98552"/></g><rect x="414" y="297" width="10" height="26" rx="3" fill="#8A5A32"/><rect x="414" y="337" width="10" height="26" rx="3" fill="#8A5A32"/><rect x="578" y="297" width="10" height="26" rx="3" fill="#8A5A32"/><rect x="578" y="337" width="10" height="26" rx="3" fill="#8A5A32"/><g><circle cx="418" cy="272" r="14" fill="#14532D" stroke="#fff" stroke-width="2.5"/><text x="418" y="277" text-anchor="middle" font-size="15" font-weight="700" fill="#fff" font-family="Figtree,sans-serif">4</text></g></g><g data-cat="play"><rect x="110" y="50" width="230" height="125" rx="20" fill="#F1DFA8" stroke="#D9BF72" stroke-width="4"/><rect x="138" y="64" width="80" height="8" rx="3" fill="#8A5A32"/><rect x="150" y="82" width="14" height="10" rx="3" fill="#D9601E"/><rect x="192" y="82" width="14" height="10" rx="3" fill="#D9601E"/><polygon points="245,68 275,68 290,138 252,138" fill="#E9793A"/><polygon points="250,70 262,70 270,132 256,132" fill="#F6B26B"/><rect x="240" y="138" width="56" height="8" rx="3" fill="#1F7FA8"/><circle cx="172" cy="142" r="20" fill="#E8D08A" stroke="#C7AA5C" stroke-width="3"/><circle cx="165" cy="138" r="5" fill="#1F7FA8"/><g transform="translate(310 110) rotate(-20)"><rect x="-22" y="-3" width="44" height="6" rx="3" fill="#8A5A32"/><circle cx="0" cy="0" r="5" fill="#14532D"/></g><g><title>Fişle oyuncak / kitap büfesi</title><rect x="345" y="138" width="34" height="42" rx="6" fill="#1F7FA8" stroke="#fff" stroke-width="2"/><rect x="351" y="146" width="22" height="14" rx="3" fill="#fff" opacity=".85"/><rect x="351" y="164" width="22" height="6" rx="3" fill="#F2B632"/></g><g><circle cx="225" cy="50" r="14" fill="#14532D" stroke="#fff" stroke-width="2.5"/><text x="225" y="55" text-anchor="middle" font-size="15" font-weight="700" fill="#fff" font-family="Figtree,sans-serif">3</text></g></g><g data-cat="cafe"><a href="kafe-menu.html" aria-label="Kafe menüsünü aç"><g><title>Kafe / restoran: menüyü aç</title><rect x="690" y="60" width="180" height="110" rx="12" fill="#000" opacity=".18"/><rect x="680" y="50" width="180" height="110" rx="12" fill="#C9693A"/><rect x="680" y="50" width="90" height="110" rx="12" fill="#B5582B"/><line x1="770" y1="50" x2="770" y2="160" stroke="#fff" stroke-width="3" opacity=".55"/><rect x="715" y="150" width="40" height="8" rx="3" fill="#fff"/><rect x="800" y="66" width="36" height="22" rx="4" fill="#fff" opacity=".4"/><text x="770" y="112" text-anchor="middle" font-size="26" font-weight="800" fill="#fff" font-family="Bricolage Grotesque,sans-serif">Kafe</text><circle cx="650" cy="78" r="12" fill="#F6EAD0" stroke="#B58B5A" stroke-width="2.5"/><circle cx="650" cy="118" r="12" fill="#F6EAD0" stroke="#B58B5A" stroke-width="2.5"/><circle cx="650" cy="158" r="12" fill="#F6EAD0" stroke="#B58B5A" stroke-width="2.5"/><circle cx="634" cy="78" r="4" fill="#B58B5A"/><circle cx="666" cy="78" r="4" fill="#B58B5A"/><circle cx="634" cy="118" r="4" fill="#B58B5A"/><circle cx="666" cy="118" r="4" fill="#B58B5A"/><circle cx="634" cy="158" r="4" fill="#B58B5A"/><circle cx="666" cy="158" r="4" fill="#B58B5A"/></g><g><circle cx="770" cy="50" r="14" fill="#14532D" stroke="#fff" stroke-width="2.5"/><text x="770" y="55" text-anchor="middle" font-size="15" font-weight="700" fill="#fff" font-family="Figtree,sans-serif">1</text></g></a></g><g data-cat="kam"><rect x="438" y="294" width="140" height="100" rx="10" fill="#000" opacity=".15"/><rect x="430" y="285" width="140" height="100" rx="10" fill="#E7D3AE" opacity=".6" stroke="#8A5A32" stroke-width="6"/><line x1="446" y1="288" x2="446" y2="382" stroke="#A77A4A" stroke-width="5"/><line x1="462" y1="288" x2="462" y2="382" stroke="#A77A4A" stroke-width="5"/><line x1="478" y1="288" x2="478" y2="382" stroke="#A77A4A" stroke-width="5"/><line x1="494" y1="288" x2="494" y2="382" stroke="#A77A4A" stroke-width="5"/><line x1="510" y1="288" x2="510" y2="382" stroke="#A77A4A" stroke-width="5"/><line x1="526" y1="288" x2="526" y2="382" stroke="#A77A4A" stroke-width="5"/><line x1="542" y1="288" x2="542" y2="382" stroke="#A77A4A" stroke-width="5"/><line x1="558" y1="288" x2="558" y2="382" stroke="#A77A4A" stroke-width="5"/><circle cx="500" cy="335" r="14" fill="#F6EAD0" stroke="#8A5A32" stroke-width="3"/><g><circle cx="500" cy="285" r="14" fill="#14532D" stroke="#fff" stroke-width="2.5"/><text x="500" y="290" text-anchor="middle" font-size="15" font-weight="700" fill="#fff" font-family="Figtree,sans-serif">5</text></g></g><g data-cat="sport"><rect x="800" y="470" width="165" height="112" rx="10" fill="#3C8D5A" stroke="#fff" stroke-width="3"/><rect x="812" y="482" width="141" height="88" fill="none" stroke="#fff" stroke-width="2.5"/><line x1="882" y1="482" x2="882" y2="570" stroke="#fff" stroke-width="2.5"/><circle cx="882" cy="526" r="16" fill="none" stroke="#fff" stroke-width="2.5"/><g><circle cx="960" cy="470" r="14" fill="#14532D" stroke="#fff" stroke-width="2.5"/><text x="960" y="475" text-anchor="middle" font-size="15" font-weight="700" fill="#fff" font-family="Figtree,sans-serif">6</text></g></g><g data-cat="doa"><circle cx="715" cy="215" r="30" fill="#1E8A63" opacity=".22"/><rect x="700" y="195" width="30" height="40" rx="6" fill="#1E8A63" stroke="#fff" stroke-width="2"/><svg x="705" y="202" width="20" height="20" class="nic" style="color:#fff"><use href="#i-recycle"/></svg><rect x="707" y="225" width="16" height="4" rx="2" fill="#fff" opacity=".85"/><circle cx="302" cy="232" r="30" fill="#1E8A63" opacity=".22"/><rect x="287" y="212" width="30" height="40" rx="6" fill="#1E8A63" stroke="#fff" stroke-width="2"/><svg x="292" y="219" width="20" height="20" class="nic" style="color:#fff"><use href="#i-recycle"/></svg><rect x="294" y="242" width="16" height="4" rx="2" fill="#fff" opacity=".85"/><circle cx="437" cy="560" r="30" fill="#1E8A63" opacity=".22"/><rect x="422" y="540" width="30" height="40" rx="6" fill="#1E8A63" stroke="#fff" stroke-width="2"/><svg x="427" y="547" width="20" height="20" class="nic" style="color:#fff"><use href="#i-recycle"/></svg><rect x="429" y="570" width="16" height="4" rx="2" fill="#fff" opacity=".85"/><g><circle cx="735" cy="190" r="14" fill="#14532D" stroke="#fff" stroke-width="2.5"/><text x="735" y="195" text-anchor="middle" font-size="15" font-weight="700" fill="#fff" font-family="Figtree,sans-serif">2</text></g><g><circle cx="322" cy="207" r="14" fill="#14532D" stroke="#fff" stroke-width="2.5"/><text x="322" y="212" text-anchor="middle" font-size="15" font-weight="700" fill="#fff" font-family="Figtree,sans-serif">2</text></g><g><circle cx="457" cy="535" r="14" fill="#14532D" stroke="#fff" stroke-width="2.5"/><text x="457" y="540" text-anchor="middle" font-size="15" font-weight="700" fill="#fff" font-family="Figtree,sans-serif">2</text></g></g><g data-cat="info"><g><title>Bilgi panosu ve QR</title><rect x="563" y="552" width="42" height="30" rx="4" fill="#fff" stroke="#14532D" stroke-width="3"/><rect x="570" y="558" width="8" height="8" fill="#14532D"/><rect x="582" y="558" width="8" height="8" fill="#14532D"/><rect x="570" y="570" width="8" height="8" fill="#14532D"/><rect x="592" y="570" width="8" height="8" fill="#14532D"/></g><g><circle cx="584" cy="552" r="14" fill="#14532D" stroke="#fff" stroke-width="2.5"/><text x="584" y="557" text-anchor="middle" font-size="15" font-weight="700" fill="#fff" font-family="Figtree,sans-serif">7</text></g></g><g data-cat="gate"><g><circle cx="500" cy="598" r="14" fill="#14532D" stroke="#fff" stroke-width="2.5"/><text x="500" y="603" text-anchor="middle" font-size="15" font-weight="700" fill="#fff" font-family="Figtree,sans-serif">9</text></g><g><circle cx="24" cy="340" r="14" fill="#14532D" stroke="#fff" stroke-width="2.5"/><text x="24" y="345" text-anchor="middle" font-size="15" font-weight="700" fill="#fff" font-family="Figtree,sans-serif">9</text></g></g></svg></div><div class="lg"><button type="button" data-cat="cafe" aria-pressed="false"><i>1</i>Kafe / restoran</button><button type="button" data-cat="doa" aria-pressed="false"><i>2</i>DOA geri dönüşüm makinesi (3 adet)</button><button type="button" data-cat="play" aria-pressed="false"><i>3</i>Çocuk oyun alanı ve fişle oyuncak büfesi</button><button type="button" data-cat="bench" aria-pressed="false"><i>4</i>Banklar</button><button type="button" data-cat="kam" aria-pressed="false"><i>5</i>Kamelya</button><button type="button" data-cat="sport" aria-pressed="false"><i>6</i>Spor sahası</button><button type="button" data-cat="info" aria-pressed="false"><i>7</i>Bilgi panosu ve QR kod</button><button type="button" data-cat="plant" aria-pressed="false"><i>8</i>Susuz bitki alanı: lavanta, zeytin, biberiye</button><button type="button" data-cat="gate" aria-pressed="false"><i>9</i>Park girişleri</button></div><a class="btn" href="kafe-menu.html">Kafe menüsünü ve kupon seviyelerini gör</a><div class="note mapnote">Plan örnek amaçlıdır, ölçeksizdir. Kafe kutusuna dokunursanız menü sayfası açılır.</div></div></section>
+</main>
+
+<footer><div class="wrap">Sosyal Susuz Park Projesi · Şanlıurfa. Hava durumu verisi Open-Meteo üzerinden alınır ve sayfa açıkken 10 dakikada bir yenilenir.</div></footer>
+
+<script>
+/* ============ VERI: burayı gerçek değerlerle güncelleyin ============ */
+const VERI = {
+  parkSayisi: 12,          // kurulan park sayısı
+  ziyaretci: 48730,        // toplam ziyaretçi
+  atikKg: 6420,            // DOA makinelerine kazandırılan atık (kg)
+  // Hava durumu noktaları (enlem, boylam) — isterseniz değiştirin
+  merkez: { lat: 37.1591, lon: 38.7969 },
+  kirsal: { lat: 37.30,   lon: 38.50 }
+};
+/* ==================================================================== */
+
+const $ = id => document.getElementById(id);
+const tr = new Intl.NumberFormat('tr-TR');
+
+// Sayaçlar
+function countUp(el, to){
+  const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(still){ el.textContent = tr.format(to); return; }
+  const t0 = performance.now(), d = 1600;
+  (function step(t){
+    const p = Math.min((t - t0) / d, 1), e = 1 - Math.pow(1 - p, 3);
+    el.textContent = tr.format(Math.round(to * e));
+    if(p < 1) requestAnimationFrame(step);
+  })(t0);
+}
+// Canlı sayım: önce yukarı sayar, sonra sürekli artmaya devam eder
+const live = {
+  cPark:  {k:'parkSayisi', every:[40000,70000], step:()=>1},
+  cVisit: {k:'ziyaretci',  every:[1200,3200],   step:()=>1+Math.floor(Math.random()*3)},
+  cWaste: {k:'atikKg',     every:[1500,3500],   step:()=>1+Math.floor(Math.random()*4)}
+};
+function tick(id){
+  const L = live[id], el = $(id);
+  VERI[L.k] += L.step();
+  el.textContent = tr.format(VERI[L.k]);
+  el.classList.remove('pop'); void el.offsetWidth; el.classList.add('pop');
+  setTimeout(() => tick(id), L.every[0] + Math.random() * (L.every[1] - L.every[0]));
+}
+const io = new IntersectionObserver(es => es.forEach(x => { if(x.isIntersecting){ x.target._go(); io.unobserve(x.target); } }));
+Object.keys(live).forEach(id => {
+  const el = $(id);
+  el._go = () => {
+    countUp(el, VERI[live[id].k]);
+    setTimeout(() => tick(id), 1800);
+  };
+  io.observe(el);
+});
+
+// Hava durumu
+const KOD = {0:'Açık',1:'Çoğunlukla açık',2:'Parçalı bulutlu',3:'Kapalı',45:'Sisli',48:'Kırağılı sis',51:'Hafif çisenti',53:'Çisenti',55:'Yoğun çisenti',61:'Hafif yağmur',63:'Yağmur',65:'Kuvvetli yağmur',71:'Hafif kar',73:'Kar',75:'Yoğun kar',80:'Sağanak',81:'Sağanak',82:'Kuvvetli sağanak',95:'Gök gürültülü fırtına',96:'Dolu ile fırtına',99:'Dolu ile fırtına'};
+const fmt = n => (n > 0 ? '' : '') + n.toFixed(1).replace('.', ',');
+
+function show(c, r, demo){
+  $('tCity').textContent = Math.round(c.temperature_2m) + '°';
+  $('tRural').textContent = Math.round(r.temperature_2m) + '°';
+  $('mCity').textContent = (KOD[c.weather_code] || 'Hava durumu') + ' · Nem %' + Math.round(c.relative_humidity_2m) + ' · Rüzgar ' + Math.round(c.wind_speed_10m) + ' km/sa';
+  $('mRural').textContent = (KOD[r.weather_code] || 'Hava durumu') + ' · Nem %' + Math.round(r.relative_humidity_2m) + ' · Rüzgar ' + Math.round(r.wind_speed_10m) + ' km/sa';
+  const d = c.temperature_2m - r.temperature_2m;
+  $('tDiff').textContent = (d > 0 ? '+' : '') + fmt(d) + '°C';
+  $('diffText').textContent = d > 0.4 ? 'Şehir merkezi kırsaldan daha sıcak. Her yeni susuz park bu farkı kapatmaya yardım eder.'
+    : d < -0.4 ? 'Şu anda merkez kırsaldan daha serin.' : 'Şu anda iki bölge arasındaki fark çok küçük.';
+  $('wxNote').textContent = demo ? 'Canlı veriye ulaşılamadı, örnek değerler gösteriliyor.' : 'Son güncelleme: ' + new Date().toLocaleTimeString('tr-TR',{hour:'2-digit',minute:'2-digit'});
+}
+
+async function load(){
+  const q = p => 'https://api.open-meteo.com/v1/forecast?latitude=' + p.lat + '&longitude=' + p.lon +
+    '&current=temperature_2m,relative_humidity_2m,wind_speed_10m,weather_code&timezone=auto';
+  try{
+    const [a, b] = await Promise.all([fetch(q(VERI.merkez)), fetch(q(VERI.kirsal))]);
+    if(!a.ok || !b.ok) throw new Error('hata');
+    const [ja, jb] = await Promise.all([a.json(), b.json()]);
+    show(ja.current, jb.current, false);
+  }catch(e){
+    show({temperature_2m:38.6,relative_humidity_2m:18,wind_speed_10m:12,weather_code:0},
+         {temperature_2m:34.9,relative_humidity_2m:22,wind_speed_10m:15,weather_code:0}, true);
+  }
+}
+load();
+setInterval(load, 600000);
+
+// Harita açıklaması: maddeye tıklayınca öne çıkar
+(function(){
+  const svg=document.getElementById('parkmap'), bs=[...document.querySelectorAll('.lg button')];
+  bs.forEach(b=>b.addEventListener('click',()=>{
+    const on=b.getAttribute('aria-pressed')!=='true';
+    bs.forEach(x=>x.setAttribute('aria-pressed','false'));
+    svg.querySelectorAll('[data-cat]').forEach(g=>g.classList.remove('dim'));
+    if(on){ b.setAttribute('aria-pressed','true');
+      svg.querySelectorAll('[data-cat]').forEach(g=>g.classList.toggle('dim',g.dataset.cat!==b.dataset.cat)); }
+  }));
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Park Kafesi Menüsü ve Kupon Seviyeleri · Susuz Park</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#ECF5E6;--card:#F8FCF4;--ink:#16301F;--mute:#547060;--line:#CBDDC4;--leaf:#2F8A3E;--sun:#D9601E;--teal:#1E8A63;--water:#1F7FA8;--forest:#14532D;--gold:#F2B632}
+@media (prefers-color-scheme:dark){:root{--bg:#0E1912;--card:#15251B;--ink:#E6F0E2;--mute:#9DB6A5;--line:#29402F;--leaf:#7CCB6A;--sun:#E9793A;--teal:#34B088;--water:#4AA8D0;--forest:#0A2214}}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(1000px 420px at 85% -5%,color-mix(in srgb,var(--gold) 22%,transparent),transparent 70%),var(--bg);color:var(--ink);font:400 17px/1.55 Figtree,system-ui,sans-serif}
+h1,h2,h3,.num{font-family:"Bricolage Grotesque",Figtree,sans-serif;letter-spacing:-.02em;line-height:1.08;margin:0}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px}
+:focus-visible{outline:3px solid var(--water);outline-offset:3px}
+.ic{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.top{display:flex;align-items:center;gap:10px;padding-top:22px;font-family:"Bricolage Grotesque",sans-serif;font-size:18px}
+.top .ic{font-size:28px;color:var(--leaf)}
+.top a{margin-left:auto;font:600 15px Figtree,sans-serif;text-decoration:none;background:var(--forest);color:#fff;padding:9px 16px;border-radius:999px}
+h1{font-size:clamp(32px,6vw,56px);font-weight:800;margin:34px 0 10px;max-width:16ch}
+.lead{color:var(--mute);max-width:58ch;margin:0 0 6px}
+section{padding:30px 0}
+h2{font-size:clamp(24px,4vw,34px);font-weight:700;margin-bottom:6px}
+.tiers{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin-top:18px}
+.tier{font:inherit;color:inherit;text-align:left;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:16px;cursor:pointer;position:relative}
+.tier[aria-pressed=true]{border-color:var(--leaf);box-shadow:0 0 0 3px var(--leaf)}
+.tier .ic{font-size:30px;color:var(--leaf);display:block;margin-bottom:6px}
+.tier b{font:700 20px "Bricolage Grotesque",sans-serif;display:block}
+.tier .kg{font-size:14px;color:var(--mute);display:block;margin:2px 0 8px}
+.tier .off{font:800 34px "Bricolage Grotesque",sans-serif;color:var(--sun);display:block;line-height:1}
+.tier .bonus{font-size:14px;display:block;margin-top:6px}
+.tier:nth-child(1) .ic{font-size:18px}.tier:nth-child(2) .ic{font-size:22px}.tier:nth-child(3) .ic{font-size:26px}.tier:nth-child(4) .ic{font-size:30px}.tier:nth-child(5) .ic{font-size:36px}
+.active{margin-top:16px;padding:14px 18px;border-radius:16px;background:var(--forest);color:#fff}
+.menu{display:grid;grid-template-columns:repeat(auto-fit,minmax(380px,1fr));gap:26px 34px;margin-top:20px}
+.menu h3{font-size:22px;font-weight:700;padding-bottom:8px;border-bottom:2px solid var(--ink);margin-bottom:4px}
+.it{display:grid;grid-template-columns:1fr auto;gap:2px 14px;padding:10px 0;border-bottom:1px solid var(--line)}
+.it b{font-weight:600}
+.it small{grid-column:1;color:var(--mute);font-size:14px}
+.pr{grid-row:1/3;grid-column:2;text-align:right;font-variant-numeric:tabular-nums;font-weight:700}
+.pr s{display:block;font-weight:400;color:var(--mute);font-size:14px}
+.pr em{font-style:normal;color:var(--sun)}
+.kids{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:6px 20px 14px;margin-top:16px}
+.note{font-size:14px;color:var(--mute);margin-top:12px}
+ul{margin:10px 0 0;padding-left:20px}
+li{margin:4px 0}
+footer{padding:30px 0 60px;color:var(--mute);font-size:14px;border-top:1px solid var(--line)}
+@media (max-width:480px){.menu{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="i-leaf" viewBox="0 0 24 24"><path d="M5 19C5 10 10 5 20 4c0 10-5 15-14 15zM5 19l8-8"/></symbol>
+<symbol id="i-tree" viewBox="0 0 24 24"><path d="M12 22v-7M12 18l-3-2M12 17l3-2M12 15c-4 0-6-2.5-6-5.5 0-2 1.2-3.5 3-4 .5-2 1.8-3 3-3s2.5 1 3 3c1.8.5 3 2 3 4 0 3-2 5.5-6 5.5z"/></symbol>
+<symbol id="i-recycle" viewBox="0 0 24 24"><path d="M20 12a8 8 0 01-14.5 4.6M4 12a8 8 0 0114.5-4.6M18.5 3v4.5H14M5.5 21v-4.5H10"/></symbol>
+</defs></svg>
+
+<div class="wrap">
+  <div class="top"><svg class="ic"><use href="#i-leaf"/></svg><b>Park kafesi</b><a href="index.html">Ana sayfa</a></div>
+  <h1>Atığını getir, sofrada karşılığını al</h1>
+  <p class="lead">DOA makinesine bıraktığınız geri dönüşüm atığı arttıkça kuponunuzun değeri de büyür. Bir seviye seçin, menüdeki kuponlu fiyatları görün.</p>
+
+  <section>
+    <h2>Kupon seviyeleri</h2>
+    <p class="lead">Makineye attığınız toplam atık miktarı (tek ziyarette) kuponunuzu belirler.</p>
+    <div class="tiers" id="tiers"></div>
+    <div class="active" id="active"></div>
+    <div class="note">Örnek: 1 pet şişe yaklaşık 25 gramdır, 1 kg atık yaklaşık 40 şişeye denk gelir. Miktarlar ve oranlar örnektir.</div>
+  </section>
+
+  <section>
+    <h2>Menü</h2>
+    <p class="lead">Fiyatlar örnektir. Seçtiğiniz seviyeye göre kuponlu fiyat yanlarında görünür.</p>
+    <div class="menu" id="menu"></div>
+  </section>
+
+  <section>
+    <h2>Çocuklar için fişler</h2>
+    <div class="kids">
+      <p class="lead" style="margin-top:14px">Çocuklar atıkları DOA makinesine atınca fiş alır. Fişler, oyun alanının yanındaki büfede hediyeye dönüşür.</p>
+      <div class="it"><b>0,25 kg</b><span class="pr">Boyama kitabı</span></div>
+      <div class="it"><b>0,5 kg</b><span class="pr">Sıfır atık dergisi</span></div>
+      <div class="it"><b>1 kg</b><span class="pr">Okuma kitabı</span></div>
+      <div class="it"><b>2 kg</b><span class="pr">Oyuncak</span></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Kupon kuralları</h2>
+    <ul>
+      <li>Kupon, makine çıktısındaki kodla kafede geçerlidir.</li>
+      <li>Kuponlar 30 gün geçerlidir ve tek seferde bir kupon kullanılır.</li>
+      <li>Ücretsiz ürünler kupon seviyesine dahildir, indirimle birleştirilebilir.</li>
+    </ul>
+    <div class="note">Bu kurallar örnektir. Uygulamadan önce belediye ve işletmeyle netleştirin.</div>
+  </section>
+</div>
+<footer><div class="wrap">Sosyal Susuz Park Projesi · Şanlıurfa</div></footer>
+
+<script>
+const TIERS=[
+ {ad:'Filiz',kg:'0,5 kg',sise:'≈ 20 şişe',p:5,bonus:'Ek hediye yok'},
+ {ad:'Fidan',kg:'1 kg',sise:'≈ 40 şişe',p:10,bonus:'+ Ücretsiz çay'},
+ {ad:'Zeytin',kg:'2 kg',sise:'≈ 80 şişe',p:15,bonus:'+ Ücretsiz tatlı'},
+ {ad:'Meşe',kg:'4 kg',sise:'≈ 160 şişe',p:25,bonus:'+ 1 kişilik ücretsiz ana yemek'},
+ {ad:'Orman',kg:'8 kg',sise:'≈ 320 şişe',p:35,bonus:'+ 2 kişilik ücretsiz Urfa kahvaltısı'}
+];
+const MENU={
+ 'Kahvaltı':[['Urfa kahvaltısı (2 kişilik)','Peynir, ceviz, kaymak, isotlu yumurta, zeytin',450],['Serpme köy kahvaltısı','Sınırsız çay ile',650],['Menemen','Tereyağlı, taze domatesli',160],['Isotlu yumurta','Sahanda',140]],
+ 'Ana yemek':[['Urfa kebap','Közlenmiş biber, lavaş ile',380],['Ciğer kebap','Soğan, sumak, lavaş ile',350],['Lahmacun (2 adet)','İnce hamur, bol maydanozlu',180],['Patlıcan kebabı','Közlenmiş patlıcan ile',390],['Mercimek çorbası','Limonla',90]],
+ 'Tatlı':[['Şıllık','Fıstıklı, şerbetli',160],['Künefe','Sıcak servis',190],['Katmer','Fıstık ve kaymak ile',210],['Fırın sütlaç','Fırında kızartılmış',110]],
+ 'İçecek':[['Mırra','Urfa\'nın acı kahvesi',70],['Demli çay','Bardak',25],['Türk kahvesi','Orta şekerli',60],['Ayran','Bakır kasede',35],['Nar suyu','Taze sıkım',80],['Limonata','Naneli',65]]
+};
+const tiersEl=document.getElementById('tiers'),act=document.getElementById('active'),menuEl=document.getElementById('menu');
+const tl=n=>n.toLocaleString('tr-TR')+' ₺';
+let cur=+(new URLSearchParams(location.search).get('seviye')||1)-1; if(!(cur>=0&&cur<5))cur=0;
+function render(){
+  tiersEl.innerHTML=TIERS.map((t,i)=>`<button class="tier" type="button" data-i="${i}" aria-pressed="${i===cur}"><svg class="ic"><use href="#i-tree"/></svg><b>${t.ad}</b><span class="kg">${t.kg} · ${t.sise}</span><span class="off">%${t.p}</span><span class="bonus">${t.bonus}</span></button>`).join('');
+  const t=TIERS[cur];
+  act.innerHTML=`<b>${t.ad} kuponu:</b> %${t.p} indirim. ${t.bonus}.`;
+  menuEl.innerHTML=Object.entries(MENU).map(([k,items])=>`<div><h3>${k}</h3>${items.map(([n,d,p])=>`<div class="it"><b>${n}</b><small>${d}</small><span class="pr"><s>${tl(p)}</s><em>${tl(Math.round(p*(100-t.p)/100))}</em></span></div>`).join('')}</div>`).join('');
+}
+tiersEl.addEventListener('click',e=>{const b=e.target.closest('.tier');if(b){cur=+b.dataset.i;render();}});
+render();
+</script>
+</body>
+</html>
